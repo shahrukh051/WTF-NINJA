@@ -1,0 +1,27 @@
+# PyTorch with ROCm — install SEPARATELY with the command below:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.1
+
+# vLLM is the separate OpenAI-compatible model server.
+# Install it on the ROCm host that serves port 8001, not in this API venv.
+
+# FastAPI server
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+
+# LangChain agent
+langchain>=0.2.0
+langchain-community>=0.2.0
+langchain-openai>=0.1.0
+
+# OpenAI client (used to talk to local vLLM server)
+openai>=1.30.0
+
+# Image processing
+Pillow>=10.0.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Database
+sqlalchemy>=2.0.0

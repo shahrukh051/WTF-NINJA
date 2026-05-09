@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aushadhi Vault - Billing History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#071e27",
+                        "secondary-fixed-dim": "#88d982",
+                        "on-tertiary-fixed": "#410003",
+                        "tertiary-fixed": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#000666",
+                        "inverse-primary": "#bdc2ff",
+                        "background": "#f3faff",
+                        "secondary-container": "#a0f399",
+                        "surface": "#f3faff",
+                        "on-tertiary-fixed-variant": "#93000e",
+                        "surface-variant": "#cfe6f2",
+                        "inverse-on-surface": "#dff4ff",
+                        "surface-container-highest": "#cfe6f2",
+                        "tertiary-container": "#670007",
+                        "primary-container": "#1a237e",
+                        "surface-container": "#dbf1fe",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#c7dde9",
+                        "outline": "#767683",
+                        "surface-tint": "#4c56af",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#343d96",
+                        "on-primary-container": "#8690ee",
+                        "surface-container-low": "#e6f6ff",
+                        "on-surface-variant": "#454652",
+                        "on-secondary-container": "#217128",
+                        "outline-variant": "#c6c5d4",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "on-secondary-fixed": "#002204",
+                        "primary-fixed": "#e0e0ff",
+                        "surface-container-high": "#d5ecf8",
+                        "inverse-surface": "#1e333c",
+                        "tertiary-fixed-dim": "#ffb4ac",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#000767",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#a3f69c",
+                        "tertiary": "#400003",
+                        "on-surface": "#071e27",
+                        "surface-bright": "#f3faff",
+                        "on-secondary-fixed-variant": "#005312",
+                        "secondary": "#1b6d24",
+                        "on-tertiary-container": "#ff635a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "data-mono": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-mono": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f3faff; color: #071e27; font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen overflow-x-hidden"><!-- SideNavBar -->
+<nav class="h-full w-64 fixed left-0 top-0 bg-surface border-r border-outline-variant z-50 flex flex-col py-lg">
+<div class="px-lg mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Aushadhi Vault</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Pharmacy Manager</p>
+</div>
+</div>
+<ul class="flex-1 flex flex-col gap-2 px-md">
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span class="font-body-md text-body-md">Prescription Scanner</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-surface-container-highest text-on-surface font-semibold scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-body-md text-body-md">Billing</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+</li>
+</ul>
+<div class="px-md mt-auto">
+<div class="flex items-center gap-3 px-4 py-3 border-t border-outline-variant">
+<img alt="Pharmacy Staff Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUrh__JXOONvCyY33OyIiiMkMSreTWYQvpUU0UWpKy2CD0muU8GcWN1t6rlDMsfsinbKw2_YRtsy9SWpBXMZk5kr9fcYkCeRtPmwTHAWl0k37G_Hj38s0dqrFkXFm1oPIQDXHJCIDnapQdMBcSiwv1UoGBt0vIZKu32Yz0XneSuoOW1poNDQtSce-wVTGaJb24ekHVTxL7F18X1FFfe3ZmKYeuYyuZCh3bVawtpevzlVBlLoFXUDXY9RZx-TFSGlk2YX5C4HHeJFs"/>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Priya Sharma</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Staff Pharmacist</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-surface border-b border-outline-variant shadow-sm z-40 flex justify-between items-center px-margin-desktop">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Search bills..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100 flex items-center justify-center">
+<span class="material-symbols-outlined">translate</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100 flex items-center justify-center relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-lg text-label-lg hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Sale
+            </button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-20 px-margin-desktop pb-12 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Billing History</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">View and manage past transactions</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<select class="appearance-none bg-surface-container border border-outline-variant rounded-lg px-4 py-2 pr-10 font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary">
+<option>This Month</option>
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+<option>Custom Range</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">arrow_drop_down</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-lg font-label-lg text-label-lg text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+                    Filter
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-6 mb-8">
+<div class="col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-primary-container rounded-bl-full opacity-10"></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Total Sales (This Month)</p>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">₹1,24,500</h3>
+<p class="font-label-md text-label-md text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+                    +12% vs last month
+                </p>
+</div>
+<div class="col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-secondary-container rounded-bl-full opacity-20"></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Bills Generated</p>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">342</h3>
+<p class="font-label-md text-label-md text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+                    +5% vs last month
+                </p>
+</div>
+<div class="col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-error-container rounded-bl-full opacity-20"></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Pending Payments</p>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">₹8,450</h3>
+<p class="font-label-md text-label-md text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+                    Action required on 5 bills
+                </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.02)] overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-outline-variant">
+<th class="px-6 py-4 font-label-lg text-label-lg text-on-surface">Bill ID</th>
+<th class="px-6 py-4 font-label-lg text-label-lg text-on-surface">Date</th>
+<th class="px-6 py-4 font-label-lg text-label-lg text-on-surface">Customer Name</th>
+<th class="px-6 py-4 font-label-lg text-label-lg text-on-surface text-right">Total Amount</th>
+<th class="px-6 py-4 font-label-lg text-label-lg text-on-surface text-center">Status</th>
+<th class="px-6 py-4 font-label-lg text-label-lg text-on-surface text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface">
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="px-6 py-4 font-data-mono text-data-mono text-primary">#BL-1042</td>
+<td class="px-6 py-4">20 Oct 2023, 14:30</td>
+<td class="px-6 py-4 font-label-lg text-label-lg">Rahul Sharma</td>
+<td class="px-6 py-4 text-right font-data-mono text-data-mono">₹1,250.00</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                    Paid
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="Download PDF">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="px-6 py-4 font-data-mono text-data-mono text-primary">#BL-1041</td>
+<td class="px-6 py-4">19 Oct 2023, 18:15</td>
+<td class="px-6 py-4 font-label-lg text-label-lg">Priya Patel</td>
+<td class="px-6 py-4 text-right font-data-mono text-data-mono">₹450.00</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                    Paid
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="Download PDF">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="bg-surface-container-low border-l-4 border-l-primary cursor-pointer">
+<td class="px-6 py-4 font-data-mono text-data-mono text-primary font-bold">#BL-1040</td>
+<td class="px-6 py-4 font-medium">19 Oct 2023, 11:05</td>
+<td class="px-6 py-4 font-label-lg text-label-lg font-bold">Amit Kumar</td>
+<td class="px-6 py-4 text-right font-data-mono text-data-mono font-bold">₹3,400.00</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-tertiary-container text-on-tertiary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                    Pending
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 text-primary bg-primary-container/10 rounded transition-colors" title="Close Details">
+<span class="material-symbols-outlined text-[20px]">expand_less</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="Download PDF">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="bg-surface-container-low border-b border-outline-variant border-l-4 border-l-primary">
+<td class="p-0" colspan="6">
+<div class="p-6 border-t border-outline-variant/50 bg-surface-container-lowest mx-6 mb-6 rounded-lg shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Bill Details</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Doctor: Dr. S. K. Verma | Payment Mode: Credit</p>
+</div>
+<button class="px-4 py-2 bg-primary text-on-primary rounded font-label-lg text-label-lg hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+                                            Mark as Paid
+                                        </button>
+</div>
+<table class="w-full text-left border-collapse mb-4">
+<thead>
+<tr class="border-b border-outline-variant text-on-surface-variant">
+<th class="py-2 font-label-md text-label-md w-1/2">Medicine Name</th>
+<th class="py-2 font-label-md text-label-md text-center">Qty</th>
+<th class="py-2 font-label-md text-label-md text-right">Unit Price</th>
+<th class="py-2 font-label-md text-label-md text-right">Total</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm">
+<tr class="border-b border-outline-variant/30">
+<td class="py-3">
+<p class="font-label-lg text-label-lg text-on-surface">Augmentin 625 Duo Tablet</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Amoxicillin (500mg) + Clavulanic Acid (125mg)</p>
+</td>
+<td class="py-3 text-center font-data-mono text-data-mono">2</td>
+<td class="py-3 text-right font-data-mono text-data-mono">₹201.50</td>
+<td class="py-3 text-right font-data-mono text-data-mono">₹403.00</td>
+</tr>
+<tr class="border-b border-outline-variant/30">
+<td class="py-3">
+<p class="font-label-lg text-label-lg text-on-surface">Pan 40 Tablet</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Pantoprazole (40mg)</p>
+</td>
+<td class="py-3 text-center font-data-mono text-data-mono">5</td>
+<td class="py-3 text-right font-data-mono text-data-mono">₹155.00</td>
+<td class="py-3 text-right font-data-mono text-data-mono">₹775.00</td>
+</tr>
+<tr>
+<td class="py-3">
+<p class="font-label-lg text-label-lg text-on-surface">Insulin Glargine Pen</p>
+<p class="font-label-md text-label-md text-on-surface-variant">100 IU/ml</p>
+</td>
+<td class="py-3 text-center font-data-mono text-data-mono">1</td>
+<td class="py-3 text-right font-data-mono text-data-mono">₹1,850.00</td>
+<td class="py-3 text-right font-data-mono text-data-mono">₹1,850.00</td>
+</tr>
+</tbody>
+</table>
+<div class="flex justify-end pt-4 border-t border-outline-variant">
+<div class="w-64">
+<div class="flex justify-between py-1 font-body-sm text-body-sm text-on-surface-variant">
+<span>Subtotal</span>
+<span class="font-data-mono text-data-mono">₹3,028.00</span>
+</div>
+<div class="flex justify-between py-1 font-body-sm text-body-sm text-on-surface-variant">
+<span>CGST (6%)</span>
+<span class="font-data-mono text-data-mono">₹186.00</span>
+</div>
+<div class="flex justify-between py-1 font-body-sm text-body-sm text-on-surface-variant">
+<span>SGST (6%)</span>
+<span class="font-data-mono text-data-mono">₹186.00</span>
+</div>
+<div class="flex justify-between py-2 mt-2 border-t border-outline-variant font-label-lg text-label-lg text-on-surface">
+<span>Grand Total</span>
+<span class="font-data-mono text-data-mono text-primary font-bold">₹3,400.00</span>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="px-6 py-4 font-data-mono text-data-mono text-primary">#BL-1039</td>
+<td class="px-6 py-4">18 Oct 2023, 09:20</td>
+<td class="px-6 py-4 font-label-lg text-label-lg">Suresh Gupta</td>
+<td class="px-6 py-4 text-right font-data-mono text-data-mono">₹890.00</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                    Paid
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="Download PDF">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 border-t border-outline-variant bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing 1 to 10 of 342 entries</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded border border-outline-variant text-on-surface-variant hover:bg-surface-container-highest transition-colors font-label-md text-label-md disabled:opacity-50">Previous</button>
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-label-md text-label-md">1</button>
+<button class="px-3 py-1 rounded border border-outline-variant text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md">2</button>
+<button class="px-3 py-1 rounded border border-outline-variant text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md">3</button>
+<span class="px-2 py-1 text-on-surface-variant">...</span>
+<button class="px-3 py-1 rounded border border-outline-variant text-on-surface-variant hover:bg-surface-container-highest transition-colors font-label-md text-label-md">Next</button>
+</div>
+</div>
+</div>
+</main></body></html>

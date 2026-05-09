@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inventory Management - Aushadhi Vault</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#071e27",
+                      "secondary-fixed-dim": "#88d982",
+                      "on-tertiary-fixed": "#410003",
+                      "tertiary-fixed": "#ffdad6",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#000666",
+                      "inverse-primary": "#bdc2ff",
+                      "background": "#f3faff",
+                      "secondary-container": "#a0f399",
+                      "surface": "#f3faff",
+                      "on-tertiary-fixed-variant": "#93000e",
+                      "surface-variant": "#cfe6f2",
+                      "inverse-on-surface": "#dff4ff",
+                      "surface-container-highest": "#cfe6f2",
+                      "tertiary-container": "#670007",
+                      "primary-container": "#1a237e",
+                      "surface-container": "#dbf1fe",
+                      "on-error": "#ffffff",
+                      "surface-dim": "#c7dde9",
+                      "outline": "#767683",
+                      "surface-tint": "#4c56af",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#343d96",
+                      "on-primary-container": "#8690ee",
+                      "surface-container-low": "#e6f6ff",
+                      "on-surface-variant": "#454652",
+                      "on-secondary-container": "#217128",
+                      "outline-variant": "#c6c5d4",
+                      "primary-fixed-dim": "#bdc2ff",
+                      "on-secondary-fixed": "#002204",
+                      "primary-fixed": "#e0e0ff",
+                      "surface-container-high": "#d5ecf8",
+                      "inverse-surface": "#1e333c",
+                      "tertiary-fixed-dim": "#ffb4ac",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#000767",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#a3f69c",
+                      "tertiary": "#400003",
+                      "on-surface": "#071e27",
+                      "surface-bright": "#f3faff",
+                      "on-secondary-fixed-variant": "#005312",
+                      "secondary": "#1b6d24",
+                      "on-tertiary-container": "#ff635a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "32px",
+                      "unit": "4px",
+                      "gutter": "16px",
+                      "sm": "8px",
+                      "md": "16px",
+                      "xl": "32px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "data-mono": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "headline-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex font-body-md text-body-md">
+<!-- SideNavBar -->
+<nav class="h-full w-64 fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-lg z-50">
+<div class="px-md mb-xl">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Aushadhi Vault</h1>
+<p class="font-label-md text-label-md text-on-surface-variant mt-xs">Pharmacy Manager</p>
+</div>
+<ul class="flex-1 flex flex-col gap-sm px-sm">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+                    Prescription Scanner
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-surface-container-highest text-on-surface font-semibold font-label-lg text-label-lg scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                    Inventory
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+                    Billing
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                    Analytics
+                </a>
+</li>
+</ul>
+<div class="px-md mt-auto pt-md border-t border-outline-variant">
+<div class="flex items-center gap-md">
+<img alt="Pharmacy Staff Profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="Close up portrait of a professional female pharmacist wearing a white coat, looking confident and reliable. Bright, clean clinical lighting in a modern pharmacy setting. Corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWeUKs3rikrzX50m7OFEk6M5uJx_aqw1bgnahrexn6NFioTovFQLTS2H65qE1gm_XKAhCRyEzg-bRtrbemGdRnIwDaX0CSmZBy8GlFmARns_0oN3R2ae_LZUkv9HOoID5jFohKwK8WQ5T5xLG9kfU7JOmyLJqXNDrYB-q6STm4xxs4-QXi42AH3wQnSE5Fx8iOjxazhVwdk6lv_BSjE7OFtf5S71D1EAL8kd1tmGorLu1eHQ11y4OmcddPdeF_HZZASpeEQOt1KlY"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Dr. Meera Patel</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Lead Pharmacist</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-surface border-b border-outline-variant shadow-sm flex justify-between items-center px-margin-desktop z-40">
+<div class="flex items-center gap-md">
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Inventory Management</h2>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-sm">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">translate</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-lg text-label-lg hover:opacity-90 transition-opacity flex items-center gap-sm shadow-sm">
+<span class="material-symbols-outlined">add</span>
+                New Sale
+            </button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-16 w-full min-h-screen bg-surface-bright flex flex-col p-margin-desktop gap-xl">
+<!-- Controls Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-md">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-sm bg-surface border border-outline-variant rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-sm text-body-sm text-on-surface placeholder:text-outline" placeholder="Search medicine name or SKU..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors flex items-center gap-sm shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined">add_box</span>
+                Add New Medicine
+            </button>
+</div>
+<!-- Inventory Table Container (Bento/Card Style) -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm overflow-hidden flex-1 flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-md py-sm font-label-md text-label-md text-on-surface-variant font-medium sticky top-0 bg-surface-container-low">Medicine Name</th>
+<th class="px-md py-sm font-label-md text-label-md text-on-surface-variant font-medium sticky top-0 bg-surface-container-low">Category</th>
+<th class="px-md py-sm font-label-md text-label-md text-on-surface-variant font-medium sticky top-0 bg-surface-container-low">Stock Level</th>
+<th class="px-md py-sm font-label-md text-label-md text-on-surface-variant font-medium sticky top-0 bg-surface-container-low">Expiry Date</th>
+<th class="px-md py-sm font-label-md text-label-md text-on-surface-variant font-medium sticky top-0 bg-surface-container-low">Status</th>
+<th class="px-md py-sm font-label-md text-label-md text-on-surface-variant font-medium sticky top-0 bg-surface-container-low text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1: Low Stock -->
+<tr class="hover:bg-surface-container-lowest transition-colors h-[40px]">
+<td class="px-md py-sm font-body-sm text-body-sm text-on-surface font-medium">Paracetamol 500mg</td>
+<td class="px-md py-sm font-body-sm text-body-sm text-on-surface-variant">Tablets</td>
+<td class="px-md py-sm font-data-mono text-data-mono text-on-surface">15</td>
+<td class="px-md py-sm font-data-mono text-data-mono text-on-surface-variant">12/2025</td>
+<td class="px-md py-sm">
+<span class="inline-flex items-center px-2 py-1 rounded bg-[#fff8e1] text-[#f57f17] border border-[#ffecb3] font-label-md text-label-md gap-1">
+<span class="w-2 h-2 rounded-full bg-[#f57f17]"></span>
+                                    Low Stock
+                                </span>
+</td>
+<td class="px-md py-sm text-right">
+<button class="text-primary hover:text-primary-container font-label-md text-label-md border border-primary px-3 py-1 rounded hover:bg-surface-container transition-colors">
+                                    Restock
+                                </button>
+</td>
+</tr>
+<!-- Row 2: Expiry Risk -->
+<tr class="hover:bg-surface-container-lowest transition-colors h-[40px] bg-[#fff0f1]">
+<td class="px-md py-sm font-body-sm text-body-sm text-on-surface font-medium">Cough Syrup (Ascoril)</td>
+<td class="px-md py-sm font-body-sm text-body-sm text-on-surface-variant">Syrup</td>
+<td class="px-md py-sm font-data-mono text-data-mono text-on-surface">50</td>
+<td class="px-md py-sm font-data-mono text-data-mono font-bold text-error">10/2024</td>
+<td class="px-md py-sm">
+<span class="inline-flex items-center px-2 py-1 rounded bg-error-container text-on-error-container border border-tertiary-fixed-dim font-label-md text-label-md gap-1">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                                    Expiry Risk
+                                </span>
+</td>
+<td class="px-md py-sm text-right">
+<button class="text-primary hover:text-primary-container font-label-md text-label-md border border-primary px-3 py-1 rounded hover:bg-surface-container transition-colors">
+                                    Restock
+                                </button>
+</td>
+</tr>
+<!-- Row 3: Healthy -->
+<tr class="hover:bg-surface-container-lowest transition-colors h-[40px]">
+<td class="px-md py-sm font-body-sm text-body-sm text-on-surface font-medium">Amoxicillin</td>
+<td class="px-md py-sm font-body-sm text-body-sm text-on-surface-variant">Capsules</td>
+<td class="px-md py-sm font-data-mono text-data-mono text-on-surface">100</td>
+<td class="px-md py-sm font-data-mono text-data-mono text-on-surface-variant">05/2026</td>
+<td class="px-md py-sm">
+<span class="inline-flex items-center px-2 py-1 rounded bg-[#e8f5e9] text-[#2e7d32] border border-[#c8e6c9] font-label-md text-label-md gap-1">
+<span class="w-2 h-2 rounded-full bg-[#4caf50]"></span>
+                                    Healthy
+                                </span>
+</td>
+<td class="px-md py-sm text-right">
+<button class="text-primary hover:text-primary-container font-label-md text-label-md border border-primary px-3 py-1 rounded hover:bg-surface-container transition-colors">
+                                    Restock
+                                </button>
+</td>
+</tr>
+<!-- Row 4: Healthy -->
+<tr class="hover:bg-surface-container-lowest transition-colors h-[40px]">
+<td class="px-md py-sm font-body-sm text-body-sm text-on-surface font-medium">Ibuprofen 400mg</td>
+<td class="px-md py-sm font-body-sm text-body-sm text-on-surface-variant">Tablets</td>
+<td class="px-md py-sm font-data-mono text-data-mono text-on-surface">85</td>
+<td class="px-md py-sm font-data-mono text-data-mono text-on-surface-variant">11/2025</td>
+<td class="px-md py-sm">
+<span class="inline-flex items-center px-2 py-1 rounded bg-[#e8f5e9] text-[#2e7d32] border border-[#c8e6c9] font-label-md text-label-md gap-1">
+<span class="w-2 h-2 rounded-full bg-[#4caf50]"></span>
+                                    Healthy
+                                </span>
+</td>
+<td class="px-md py-sm text-right">
+<button class="text-primary hover:text-primary-container font-label-md text-label-md border border-primary px-3 py-1 rounded hover:bg-surface-container transition-colors">
+                                    Restock
+                                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer -->
+<div class="mt-auto px-md py-sm border-t border-outline-variant bg-surface flex justify-between items-center text-on-surface-variant font-label-md text-label-md">
+<span>Showing 1-4 of 1,248 items</span>
+<div class="flex gap-sm">
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-surface-container disabled:opacity-50" disabled="">Prev</button>
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-surface-container">Next</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - Aushadhi Vault</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#071e27",
+                        "secondary-fixed-dim": "#88d982",
+                        "on-tertiary-fixed": "#410003",
+                        "tertiary-fixed": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#000666",
+                        "inverse-primary": "#bdc2ff",
+                        "background": "#f3faff",
+                        "secondary-container": "#a0f399",
+                        "surface": "#f3faff",
+                        "on-tertiary-fixed-variant": "#93000e",
+                        "surface-variant": "#cfe6f2",
+                        "inverse-on-surface": "#dff4ff",
+                        "surface-container-highest": "#cfe6f2",
+                        "tertiary-container": "#670007",
+                        "primary-container": "#1a237e",
+                        "surface-container": "#dbf1fe",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#c7dde9",
+                        "outline": "#767683",
+                        "surface-tint": "#4c56af",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#343d96",
+                        "on-primary-container": "#8690ee",
+                        "surface-container-low": "#e6f6ff",
+                        "on-surface-variant": "#454652",
+                        "on-secondary-container": "#217128",
+                        "outline-variant": "#c6c5d4",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "on-secondary-fixed": "#002204",
+                        "primary-fixed": "#e0e0ff",
+                        "surface-container-high": "#d5ecf8",
+                        "inverse-surface": "#1e333c",
+                        "tertiary-fixed-dim": "#ffb4ac",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#000767",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#a3f69c",
+                        "tertiary": "#400003",
+                        "on-surface": "#071e27",
+                        "surface-bright": "#f3faff",
+                        "on-secondary-fixed-variant": "#005312",
+                        "secondary": "#1b6d24",
+                        "on-tertiary-container": "#ff635a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "data-mono": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-mono": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- SideNavBar -->
+<nav class="h-full w-64 fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-lg z-50">
+<div class="px-lg mb-xl">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Aushadhi Vault</h1>
+<div class="flex items-center gap-sm mt-md">
+<img alt="Pharmacy Staff Profile" class="w-8 h-8 rounded-full object-cover" data-alt="A close up portrait of a professional pharmacy manager in a crisp white coat. They are standing in a well lit modern pharmacy environment with rows of neatly organized medication bottles in the softly blurred background. The lighting is bright and clean, emphasizing a hygienic and trustworthy atmosphere. The overall style is corporate, reliable, and medical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9m9yM0ramWPSQ5qyQuUOPM6k70y-PYQkAOutcw-2O8GccLYOPslYHlhncCz00exgJ8eVByENSidyRa5nTUL_B9-xhPYu07YTGW8xunFSvR5i5iyOxndECzpFp5dwwSWFJv5eTzZ8skRtaxdTJsavpOFVJ936sNLkiHUQbvg8Qo1fjpcRgTl88fye0Ic-2qFE62O4X-qZt02R7bXd6ymC4svznfQZwWJDUdcbC8FqC8BxhYW3i7KQ0BveuizpAufqFbJbyJ8rBlvc"/>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Pharmacy Manager</p>
+</div>
+</div>
+</div>
+<div class="flex-1 px-sm space-y-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-surface-container-highest text-on-surface font-semibold scale-95 transition-transform duration-150" href="dashboard.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="scanner.html">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span class="font-body-md text-body-md">Prescription Scanner</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="inventory.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="billing.html">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-body-md text-body-md">Billing</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="analytics.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-surface border-b border-outline-variant shadow-sm flex justify-between items-center px-margin-desktop z-40 transition-opacity duration-200 hover:opacity-100">
+<div class="flex items-center gap-md">
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Aushadhi Vault</h2>
+<div class="relative ml-xl">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="pl-10 pr-4 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-64" placeholder="Search inventory..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">translate</span>
+<span class="font-label-lg text-label-lg">EN / HI</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute -top-1 -right-1 w-3 h-3 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="bg-primary text-on-primary px-md py-sm rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors shadow-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Sale
+            </button>
+<img alt="User Avatar" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="A small circular avatar image showing a professional female pharmacist in a clinical setting. She has a warm, confident expression. The background is a soft, out of focus clinical environment with cool blue and white tones. The lighting is even and bright, suggesting a clean, modern medical facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgm_AONdVmTO6Gc7o4Gx4Q0BmgEd4DJqACUxWGYSHqdkCGSHl5icZNEC_Co2WUjLnYDhTHVPPMCtc4o8Zc57TH87UHcshdtIeMPdjp8UyPLqD7Dr72_BDEm6_abXcD9aWKTGQzn5uX_Iv8tJojN7Le6TAIM4ep4wth1Itih1jgNCqNi-XixbekojJskFsJ70UBkQLgxNAiJJdS52Lws82bsSCIGB7dOIRI3lkawA6AudH3WATyPZWx8AwWsTlZugnvMeON6a4IFiw"/>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 mt-16 p-margin-desktop">
+<!-- Summary Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-xl">
+<!-- Total Medicines -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full group-hover:scale-110 transition-transform"></div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-xs">Total Medicines</p>
+<h3 id="total-medicines" class="font-headline-lg text-headline-lg text-on-surface">-</h3>
+</div>
+<div class="flex items-center text-primary gap-xs">
+<span class="material-symbols-outlined text-sm">medication</span>
+<span class="font-label-md text-label-md">In Inventory</span>
+</div>
+</div>
+<!-- Low Stock -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-secondary/5 rounded-full group-hover:scale-110 transition-transform"></div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-xs">Low Stock</p>
+<h3 id="low-stock" class="font-headline-lg text-headline-lg text-on-surface">-</h3>
+</div>
+<div class="flex items-center text-secondary gap-xs">
+<span class="w-2 h-2 rounded-full bg-secondary-container border border-secondary"></span>
+<span class="font-label-md text-label-md">Items need restock</span>
+</div>
+</div>
+<!-- Expiry Alerts -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col justify-between h-32 relative overflow-hidden group border-l-4 border-l-error">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-error/5 rounded-full group-hover:scale-110 transition-transform"></div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-xs">Expiry Alerts</p>
+<h3 id="expiry-alerts" class="font-headline-lg text-headline-lg text-on-surface">-</h3>
+</div>
+<div class="flex items-center text-error gap-xs">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="font-label-md text-label-md">Expiring &lt; 3 months</span>
+</div>
+</div>
+<!-- Today's Revenue -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-secondary-fixed/20 rounded-full group-hover:scale-110 transition-transform"></div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-xs">Today's Revenue</p>
+<h3 id="today-revenue" class="font-headline-lg text-headline-lg text-on-surface">-</h3>
+</div>
+<div class="flex items-center text-secondary gap-xs">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="font-label-md text-label-md">+12% vs yesterday</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout for Main Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Quick Actions & Revenue Chart (Left Column - Span 2) -->
+<div class="lg:col-span-2 flex flex-col gap-gutter">
+<!-- Quick Actions -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Quick Actions</h3>
+<div class="flex flex-wrap gap-md">
+<button class="bg-primary text-on-primary px-lg py-md rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors shadow-sm flex items-center gap-sm flex-1 justify-center min-w-[200px]">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+                            Scan Prescription
+                        </button>
+<button class="bg-transparent border-2 border-primary text-primary px-lg py-md rounded-lg font-label-lg text-label-lg hover:bg-surface-container transition-colors flex items-center gap-sm flex-1 justify-center min-w-[150px]">
+<span class="material-symbols-outlined">add_box</span>
+                            Add Medicine
+                        </button>
+<button class="bg-transparent border border-outline text-on-surface-variant px-lg py-md rounded-lg font-label-lg text-label-lg hover:bg-surface-container transition-colors flex items-center gap-sm flex-1 justify-center min-w-[150px]">
+<span class="material-symbols-outlined">receipt</span>
+                            View Bills
+                        </button>
+</div>
+</div>
+<!-- Revenue Chart Area -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex-1 min-h-[300px] flex flex-col">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Revenue Trends</h3>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container px-sm py-xs rounded">Last 7 Days</span>
+</div>
+<!-- Mock Chart Visualization -->
+<div class="flex-1 w-full bg-surface-container-lowest relative mt-md flex items-end gap-sm px-md pb-md border-b border-l border-outline-variant">
+<!-- Y Axis labels mock -->
+<div class="absolute -left-8 top-0 bottom-0 flex flex-col justify-between text-[10px] text-outline py-md">
+<span>20k</span>
+<span>15k</span>
+<span>10k</span>
+<span>5k</span>
+<span>0</span>
+</div>
+<!-- Chart Bars (Mock) -->
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[40%] relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-surface-variant text-xs px-2 py-1 rounded text-on-surface transition-opacity">8k</div></div>
+<div class="flex-1 bg-primary/40 rounded-t-sm h-[60%] relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-surface-variant text-xs px-2 py-1 rounded text-on-surface transition-opacity">12k</div></div>
+<div class="flex-1 bg-primary/30 rounded-t-sm h-[50%] relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-surface-variant text-xs px-2 py-1 rounded text-on-surface transition-opacity">10k</div></div>
+<div class="flex-1 bg-primary/60 rounded-t-sm h-[75%] relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-surface-variant text-xs px-2 py-1 rounded text-on-surface transition-opacity">15k</div></div>
+<div class="flex-1 bg-primary/50 rounded-t-sm h-[65%] relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-surface-variant text-xs px-2 py-1 rounded text-on-surface transition-opacity">13k</div></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[90%] relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-surface-variant text-xs px-2 py-1 rounded text-on-surface transition-opacity">18k</div></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[70%] relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-surface-variant text-xs px-2 py-1 rounded text-on-surface transition-opacity">14.2k</div></div>
+</div>
+<!-- X Axis labels mock -->
+<div class="w-full flex justify-between text-[10px] text-outline mt-xs px-md">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+</div>
+<!-- Recent Bills Table (Right Column - Span 1) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col h-full">
+<div class="p-lg border-b border-outline-variant flex justify-between items-center bg-surface-container-low/50">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Bills</h3>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md">View All</button>
+</div>
+<div class="overflow-x-auto flex-1 p-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-lowest">
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant font-medium">Bill ID</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant font-medium">Customer</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant font-medium text-right">Amount</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant font-medium text-center">Status</th>
+</tr>
+</thead>
+<tbody id="recent-bills-list" class="font-data-mono text-data-mono">
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+</body></html>

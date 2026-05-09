@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prescription Scanner - Aushadhi Vault</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#071e27",
+                      "secondary-fixed-dim": "#88d982",
+                      "on-tertiary-fixed": "#410003",
+                      "tertiary-fixed": "#ffdad6",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#000666",
+                      "inverse-primary": "#bdc2ff",
+                      "background": "#f3faff",
+                      "secondary-container": "#a0f399",
+                      "surface": "#f3faff",
+                      "on-tertiary-fixed-variant": "#93000e",
+                      "surface-variant": "#cfe6f2",
+                      "inverse-on-surface": "#dff4ff",
+                      "surface-container-highest": "#cfe6f2",
+                      "tertiary-container": "#670007",
+                      "primary-container": "#1a237e",
+                      "surface-container": "#dbf1fe",
+                      "on-error": "#ffffff",
+                      "surface-dim": "#c7dde9",
+                      "outline": "#767683",
+                      "surface-tint": "#4c56af",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#343d96",
+                      "on-primary-container": "#8690ee",
+                      "surface-container-low": "#e6f6ff",
+                      "on-surface-variant": "#454652",
+                      "on-secondary-container": "#217128",
+                      "outline-variant": "#c6c5d4",
+                      "primary-fixed-dim": "#bdc2ff",
+                      "on-secondary-fixed": "#002204",
+                      "primary-fixed": "#e0e0ff",
+                      "surface-container-high": "#d5ecf8",
+                      "inverse-surface": "#1e333c",
+                      "tertiary-fixed-dim": "#ffb4ac",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#000767",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#a3f69c",
+                      "tertiary": "#400003",
+                      "on-surface": "#071e27",
+                      "surface-bright": "#f3faff",
+                      "on-secondary-fixed-variant": "#005312",
+                      "secondary": "#1b6d24",
+                      "on-tertiary-container": "#ff635a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "32px",
+                      "unit": "4px",
+                      "gutter": "16px",
+                      "sm": "8px",
+                      "md": "16px",
+                      "xl": "32px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "data-mono": [
+                              "Inter"
+                      ],
+                      "label-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "data-mono": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen flex overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-surface text-primary font-body-md text-body-md h-full w-64 fixed left-0 top-0 border-r border-outline-variant flex flex-col h-full py-lg z-50">
+<div class="px-md mb-lg">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Aushadhi Vault</h1>
+</div>
+<div class="px-md mb-lg flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Pharmacy Staff Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a professional female pharmacist in a white lab coat, standing in a brightly lit modern pharmacy. High key lighting with a medical, clean aesthetic. Shallow depth of field, focused on her confident expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl_b2c8FjKMnQ_0Y3DwnUjtqWO1HSPch64iuM2GwahX-7IvSCtzjg51-BnU_XD4HLX7_7k4ojMjk0XvUFOl9sQoxG5-52EWSyVzmOxC-ZIlmYRnBPc9YqWHOFdHtw-zRgvamOZB_R3jwA4mW32nCHJRwIQnTFV4kvA4BxEBWLNl-xKweT-veeUeTrB7JDWGtdAwjqWMwY7jRHfU0Lp2g-AGShstdiHc89RKd6hbtJCvbh0tH_dbpGhFSz_BKA-QdMfBFyzE5Jz7G8"/>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Pharmacy Staff Profile</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Pharmacy Manager</div>
+</div>
+</div>
+<ul class="flex-1 overflow-y-auto px-sm space-y-unit">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-surface-container-highest text-on-surface font-semibold hover:bg-surface-container transition-colors scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+                    Prescription Scanner
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Inventory
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+                    Billing
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                    Analytics
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col h-full overflow-hidden relative">
+<!-- TopNavBar -->
+<header class="bg-surface text-primary font-label-lg text-label-lg fixed top-0 right-0 w-[calc(100%-16rem)] h-16 border-b border-outline-variant shadow-sm flex justify-between items-center px-margin-desktop h-16 z-40">
+<div class="flex items-center">
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Aushadhi Vault</h2>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-80 duration-200">
+<span class="material-symbols-outlined">translate</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-80 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors">
+                    New Sale
+                </button>
+<div class="w-8 h-8 rounded-full overflow-hidden ml-sm border border-outline-variant">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a professional female pharmacist in a white lab coat, standing in a brightly lit modern pharmacy. High key lighting with a medical, clean aesthetic. Shallow depth of field, focused on her confident expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSMR0KYt6r1c6NZsvZU595eyKzk6A2tHthRLx-Z3InDice0azsQiRirs52g0-6Zc_Ryhz-1ezyz_Jv-ICy6ysKQwPSR6Q8vRojd7QI4sLjBtchH_tgPCOZ5pXHOnWcmVqvSyUsCn8ecwQkz_T-bdncaIbdpiyyenOoofyXHW-7Umm3_Aa07zLUZEAwewlMBGcy2QGGn2JN6ujCbt-GIawUT6elooQ7rCAZb0CBQoAX699ECYaKklJO4wbf2qk9xd7B6jhHegfhQfQ"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 mt-16 overflow-y-auto p-margin-desktop bg-background">
+<div class="max-w-6xl mx-auto space-y-lg">
+<!-- Page Header -->
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Prescription Scanner</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-unit">Upload or capture a prescription to automatically extract medicine details.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Upload Section (Left Col) -->
+<div class="lg:col-span-5 flex flex-col gap-lg">
+<!-- Upload Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col items-center justify-center text-center min-h-[300px] border-dashed border-2 bg-surface-bright hover:bg-surface-container-low transition-colors cursor-pointer relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-3xl">upload_file</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-unit">Drag &amp; Drop Prescription</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">or click to browse files (JPG, PNG, PDF)</p>
+<div class="flex gap-md mt-sm">
+<button class="border border-primary text-primary px-md py-sm rounded-lg font-label-lg text-label-lg hover:bg-surface-container transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined text-sm">folder_open</span>
+                                        Browse
+                                    </button>
+<button class="bg-primary text-on-primary px-md py-sm rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+                                        Capture
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Processing State (Hidden by default, shown for demo) -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md flex items-center gap-md hidden" id="processing-state">
+<span class="material-symbols-outlined animate-spin text-primary">progress_activity</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">AI vision analysis in progress...</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Extracting text and identifying medicines.</p>
+</div>
+</div>
+</div>
+<!-- Results Section (Right Col) -->
+<div class="lg:col-span-7 flex flex-col">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl flex flex-col h-full overflow-hidden shadow-sm">
+<div class="px-lg py-md border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Extracted Results</h3>
+<span class="bg-secondary-container text-on-secondary-container px-sm py-unit rounded text-xs font-medium">Confidence: High</span>
+</div>
+<div class="flex-1 overflow-x-auto p-0">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest border-b border-outline-variant">
+<th class="p-md font-label-md text-label-md text-on-surface-variant font-medium">Medicine Name</th>
+<th class="p-md font-label-md text-label-md text-on-surface-variant font-medium">Dosage</th>
+<th class="p-md font-label-md text-label-md text-on-surface-variant font-medium">Quantity</th>
+<th class="p-md font-label-md text-label-md text-on-surface-variant font-medium">Unit Price (₹)</th>
+<th class="p-md font-label-md text-label-md text-on-surface-variant font-medium w-10"></th>
+</tr>
+</thead>
+<tbody class="font-data-mono text-data-mono text-on-surface">
+<tr class="border-b border-outline-variant hover:bg-surface-bright transition-colors">
+<td class="p-sm">
+<input class="w-full bg-transparent border-none p-sm focus:ring-2 focus:ring-primary rounded" type="text" value="Paracetamol 500mg"/>
+</td>
+<td class="p-sm">
+<input class="w-full bg-transparent border-none p-sm focus:ring-2 focus:ring-primary rounded" type="text" value="1-0-1"/>
+</td>
+<td class="p-sm">
+<input class="w-full bg-transparent border-none p-sm focus:ring-2 focus:ring-primary rounded" type="number" value="10"/>
+</td>
+<td class="p-sm">
+<input class="w-full bg-transparent border-none p-sm focus:ring-2 focus:ring-primary rounded" type="number" value="2.50"/>
+</td>
+<td class="p-sm text-center">
+<button class="text-error hover:text-on-error-container p-unit rounded-full hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-bright transition-colors">
+<td class="p-sm">
+<input class="w-full bg-transparent border-none p-sm focus:ring-2 focus:ring-primary rounded" type="text" value="Amoxicillin 250mg"/>
+</td>
+<td class="p-sm">
+<input class="w-full bg-transparent border-none p-sm focus:ring-2 focus:ring-primary rounded" type="text" value="1-1-1"/>
+</td>
+<td class="p-sm">
+<input class="w-full bg-transparent border-none p-sm focus:ring-2 focus:ring-primary rounded" type="number" value="15"/>
+</td>
+<td class="p-sm">
+<input class="w-full bg-transparent border-none p-sm focus:ring-2 focus:ring-primary rounded" type="number" value="8.00"/>
+</td>
+<td class="p-sm text-center">
+<button class="text-error hover:text-on-error-container p-unit rounded-full hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="p-sm">
+<input class="w-full bg-transparent border-none p-sm focus:ring-2 focus:ring-primary rounded text-error border border-error bg-error-container/10" title="Low Confidence Detection" type="text" value="Cetirizine 10mg"/>
+</td>
+<td class="p-sm">
+<input class="w-full bg-transparent border-none p-sm focus:ring-2 focus:ring-primary rounded" type="text" value="0-0-1"/>
+</td>
+<td class="p-sm">
+<input class="w-full bg-transparent border-none p-sm focus:ring-2 focus:ring-primary rounded" type="number" value="5"/>
+</td>
+<td class="p-sm">
+<input class="w-full bg-transparent border-none p-sm focus:ring-2 focus:ring-primary rounded" type="number" value="4.00"/>
+</td>
+<td class="p-sm text-center">
+<button class="text-error hover:text-on-error-container p-unit rounded-full hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Billing Summary Footer -->
+<div class="p-lg bg-surface-container-lowest border-t border-outline-variant flex justify-between items-center mt-auto">
+<div class="flex items-center gap-md">
+<button class="text-primary hover:bg-surface-container px-sm py-unit rounded font-label-lg flex items-center gap-xs transition-colors">
+<span class="material-symbols-outlined text-sm">add</span> Add Row
+                                    </button>
+</div>
+<div class="flex items-center gap-lg">
+<div class="text-right">
+<div class="font-label-md text-label-md text-on-surface-variant">Estimated Total</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">₹ 165.00</div>
+</div>
+<button class="bg-primary text-on-primary px-lg py-md rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors shadow-sm flex items-center gap-sm">
+                                        Generate Bill
+                                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

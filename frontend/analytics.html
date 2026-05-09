@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aushadhi Vault - Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#071e27",
+                      "secondary-fixed-dim": "#88d982",
+                      "on-tertiary-fixed": "#410003",
+                      "tertiary-fixed": "#ffdad6",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#000666",
+                      "inverse-primary": "#bdc2ff",
+                      "background": "#f3faff",
+                      "secondary-container": "#a0f399",
+                      "surface": "#f3faff",
+                      "on-tertiary-fixed-variant": "#93000e",
+                      "surface-variant": "#cfe6f2",
+                      "inverse-on-surface": "#dff4ff",
+                      "surface-container-highest": "#cfe6f2",
+                      "tertiary-container": "#670007",
+                      "primary-container": "#1a237e",
+                      "surface-container": "#dbf1fe",
+                      "on-error": "#ffffff",
+                      "surface-dim": "#c7dde9",
+                      "outline": "#767683",
+                      "surface-tint": "#4c56af",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#343d96",
+                      "on-primary-container": "#8690ee",
+                      "surface-container-low": "#e6f6ff",
+                      "on-surface-variant": "#454652",
+                      "on-secondary-container": "#217128",
+                      "outline-variant": "#c6c5d4",
+                      "primary-fixed-dim": "#bdc2ff",
+                      "on-secondary-fixed": "#002204",
+                      "primary-fixed": "#e0e0ff",
+                      "surface-container-high": "#d5ecf8",
+                      "inverse-surface": "#1e333c",
+                      "tertiary-fixed-dim": "#ffb4ac",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#000767",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#a3f69c",
+                      "tertiary": "#400003",
+                      "on-surface": "#071e27",
+                      "surface-bright": "#f3faff",
+                      "on-secondary-fixed-variant": "#005312",
+                      "secondary": "#1b6d24",
+                      "on-tertiary-container": "#ff635a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "32px",
+                      "unit": "4px",
+                      "gutter": "16px",
+                      "sm": "8px",
+                      "md": "16px",
+                      "xl": "32px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "data-mono": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "headline-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            gap: theme('spacing.gutter');
+        }
+        .bento-item {
+            background-color: theme('colors.surface-container-lowest');
+            border: 1px solid theme('colors.outline-variant');
+            border-radius: theme('borderRadius.xl');
+        }
+    </style>
+</head>
+<body class="text-on-background font-body-md antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="bg-surface dark:bg-inverse-surface h-full w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline flex flex-col py-lg z-50">
+<div class="px-md mb-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" style="font-size: 32px;">local_pharmacy</span>
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary">Aushadhi Vault</div>
+</div>
+<nav class="flex-1 px-sm space-y-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-DEFAULT text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-lg text-label-lg">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-DEFAULT text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span class="font-label-lg text-label-lg">Prescription Scanner</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-DEFAULT text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-lg text-label-lg">Inventory</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-DEFAULT text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-lg text-label-lg">Billing</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-DEFAULT bg-surface-container-highest dark:bg-primary-container text-on-surface dark:text-on-primary-container font-semibold hover:bg-surface-container dark:hover:bg-primary-container transition-colors scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-lg text-label-lg">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto px-md pt-md border-t border-outline-variant dark:border-outline">
+<div class="flex items-center gap-sm">
+<img alt="Pharmacy Staff Profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A close-up, highly professional studio headshot of a mature female pharmacist wearing a pristine white lab coat over a blue shirt. She has a warm, confident smile and neat, short dark hair. The background is a clean, bright clinical setting with soft, high-key white lighting. The overall mood conveys trust, medical integrity, and reliability, fitting perfectly into a corporate healthcare application with a modern, flat UI style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4i8NCY03KOKcnTzioYZhc4mxqoMYtjxSyPy-PtP4EuKrp5S2BV6DgZlIl-y4D1GYxrvgWRjIrpEQ9mHLKurt5nBtEIuYpcXcDhKWHsDoyrW_71kJvOqJeNgXPhPOYUHlz5TkVdH-tp1exnUEIiZbmf4fmCoorjGOrKJv-yTBNhycTZ7QwrE0P5ZnfhEY8VeKgzSID5OkT7N4C6Pj0FdfGxsNm2p1xaqGNRr8FIg9uLWv50yrdc70dTCtedfPf4DsLWprNShr7LV4"/>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Pharmacy Manager</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Profile &amp; Settings</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="ml-64 flex-1 flex flex-col min-h-screen w-[calc(100%-16rem)]">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface fixed top-0 right-0 w-[calc(100%-16rem)] h-16 border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none flex justify-between items-center px-margin-desktop z-40">
+<div class="flex-1 flex items-center">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT font-body-sm text-body-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Search analytics..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button aria-label="Translate" class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors hover:opacity-80 duration-200">
+<span class="material-symbols-outlined">translate</span>
+</button>
+<button aria-label="Notifications" class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors relative hover:opacity-80 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg px-md py-sm rounded-DEFAULT hover:opacity-90 transition-opacity">
+                    New Sale
+                </button>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 mt-16 p-margin-desktop bg-surface-bright">
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-xs">Analytics &amp; Insights</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Performance metrics and inventory risk analysis.</p>
+</div>
+<!-- KPIs (Bento Top Row) -->
+<div class="bento-grid mb-gutter">
+<div class="bento-item col-span-12 md:col-span-4 p-md flex flex-col justify-between">
+<div class="flex justify-between items-start mb-sm">
+<div class="font-label-lg text-label-lg text-on-surface-variant">Net Profit Margin</div>
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">24.5%</div>
+<div class="font-body-sm text-body-sm text-secondary flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined" style="font-size: 16px;">arrow_upward</span> +2.1% from last month
+                        </div>
+</div>
+</div>
+<div class="bento-item col-span-12 md:col-span-4 p-md flex flex-col justify-between">
+<div class="flex justify-between items-start mb-sm">
+<div class="font-label-lg text-label-lg text-on-surface-variant">Average Order Value</div>
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">₹485.00</div>
+<div class="font-body-sm text-body-sm text-secondary flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined" style="font-size: 16px;">arrow_upward</span> +₹15.50
+                        </div>
+</div>
+</div>
+<div class="bento-item col-span-12 md:col-span-4 p-md flex flex-col justify-between">
+<div class="flex justify-between items-start mb-sm">
+<div class="font-label-lg text-label-lg text-on-surface-variant">Customer Retention</div>
+<span class="material-symbols-outlined text-primary">group</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface">68.2%</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined" style="font-size: 16px;">horizontal_rule</span> Steady
+                        </div>
+</div>
+</div>
+</div>
+<!-- Charts & Inventory (Bento Bottom Rows) -->
+<div class="bento-grid">
+<!-- Revenue Trend -->
+<div class="bento-item col-span-12 lg:col-span-8 p-md">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Revenue Trend (Last 30 Days)</h2>
+<button class="text-primary font-label-md text-label-md hover:underline">View Details</button>
+</div>
+<div class="h-64 w-full flex items-end gap-xs pb-sm border-b border-outline-variant relative">
+<!-- Simplified CSS Line Chart Representation -->
+<div class="absolute left-0 top-0 h-full w-full flex flex-col justify-between text-outline text-[10px] pb-sm">
+<span>₹100k</span><span>₹75k</span><span>₹50k</span><span>₹25k</span><span>0</span>
+</div>
+<div class="ml-8 w-full h-full flex items-end justify-between px-sm">
+<div class="w-1/12 bg-primary-container h-[40%] rounded-t-sm opacity-80"></div>
+<div class="w-1/12 bg-primary-container h-[45%] rounded-t-sm opacity-80"></div>
+<div class="w-1/12 bg-primary-container h-[35%] rounded-t-sm opacity-80"></div>
+<div class="w-1/12 bg-primary-container h-[55%] rounded-t-sm opacity-80"></div>
+<div class="w-1/12 bg-primary-container h-[60%] rounded-t-sm opacity-80"></div>
+<div class="w-1/12 bg-primary-container h-[50%] rounded-t-sm opacity-80"></div>
+<div class="w-1/12 bg-primary-container h-[70%] rounded-t-sm opacity-80"></div>
+<div class="w-1/12 bg-primary-container h-[85%] rounded-t-sm opacity-80"></div>
+</div>
+</div>
+<div class="flex justify-between ml-8 mt-xs text-[10px] text-outline">
+<span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span>
+</div>
+</div>
+<!-- Expiry Risk Summary -->
+<div class="bento-item col-span-12 lg:col-span-4 p-md flex flex-col">
+<div class="flex items-center gap-sm mb-md pb-sm border-b border-outline-variant">
+<span class="material-symbols-outlined text-error">warning</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Expiry Risk Summary</h2>
+</div>
+<div class="flex justify-between mb-lg bg-error-container p-sm rounded-DEFAULT">
+<div>
+<div class="font-label-md text-label-md text-on-error-container">Total Items at Risk</div>
+<div class="font-headline-md text-headline-md text-on-error-container">142</div>
+</div>
+<div class="text-right">
+<div class="font-label-md text-label-md text-on-error-container">Value at Risk</div>
+<div class="font-headline-md text-headline-md text-on-error-container">₹12,450</div>
+</div>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface-variant mb-sm">Top 5 Expiring Soon</h3>
+<div class="flex-1 overflow-hidden">
+<table class="w-full text-left">
+<tbody class="divide-y divide-outline-variant font-data-mono text-data-mono">
+<tr class="h-10 hover:bg-surface-container transition-colors">
+<td class="pr-sm text-on-surface truncate max-w-[120px]">Amoxicillin 500mg</td>
+<td class="text-right text-error font-bold">12 Days</td>
+</tr>
+<tr class="h-10 hover:bg-surface-container transition-colors">
+<td class="pr-sm text-on-surface truncate max-w-[120px]">Paracetamol IV</td>
+<td class="text-right text-error font-bold">18 Days</td>
+</tr>
+<tr class="h-10 hover:bg-surface-container transition-colors">
+<td class="pr-sm text-on-surface truncate max-w-[120px]">Insulin Glargine</td>
+<td class="text-right text-error font-bold">24 Days</td>
+</tr>
+<tr class="h-10 hover:bg-surface-container transition-colors">
+<td class="pr-sm text-on-surface truncate max-w-[120px]">Metformin 1000mg</td>
+<td class="text-right text-on-surface-variant">45 Days</td>
+</tr>
+<tr class="h-10 hover:bg-surface-container transition-colors">
+<td class="pr-sm text-on-surface truncate max-w-[120px]">Azithromycin 250</td>
+<td class="text-right text-on-surface-variant">52 Days</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Top 10 Selling Medicines -->
+<div class="bento-item col-span-12 p-md mt-gutter">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-md">Top Selling Medicines</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-xl gap-y-sm font-data-mono text-data-mono">
+<!-- Column 1 -->
+<div class="flex items-center justify-between p-sm hover:bg-surface-container rounded-DEFAULT border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-sm"><span class="text-outline w-4">1</span><span class="text-on-surface font-semibold">Dolo 650mg</span></div>
+<span class="text-primary">₹45,200</span>
+</div>
+<!-- Column 2 -->
+<div class="flex items-center justify-between p-sm hover:bg-surface-container rounded-DEFAULT border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-sm"><span class="text-outline w-4">6</span><span class="text-on-surface">Telmisartan 40mg</span></div>
+<span class="text-on-surface-variant">₹18,400</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container rounded-DEFAULT border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-sm"><span class="text-outline w-4">2</span><span class="text-on-surface font-semibold">Pan 40mg</span></div>
+<span class="text-primary">₹38,150</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container rounded-DEFAULT border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-sm"><span class="text-outline w-4">7</span><span class="text-on-surface">Amlodipine 5mg</span></div>
+<span class="text-on-surface-variant">₹15,900</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container rounded-DEFAULT border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-sm"><span class="text-outline w-4">3</span><span class="text-on-surface font-semibold">Augmentin 625 Duo</span></div>
+<span class="text-primary">₹32,800</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container rounded-DEFAULT border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-sm"><span class="text-outline w-4">8</span><span class="text-on-surface">Ecosprin 75mg</span></div>
+<span class="text-on-surface-variant">₹12,200</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container rounded-DEFAULT border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-sm"><span class="text-outline w-4">4</span><span class="text-on-surface">Calpol 500mg</span></div>
+<span class="text-on-surface-variant">₹25,600</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container rounded-DEFAULT border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-sm"><span class="text-outline w-4">9</span><span class="text-on-surface">Thyronorm 50mcg</span></div>
+<span class="text-on-surface-variant">₹11,500</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container rounded-DEFAULT border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-sm"><span class="text-outline w-4">5</span><span class="text-on-surface">Allegra 120mg</span></div>
+<span class="text-on-surface-variant">₹21,300</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container rounded-DEFAULT border border-transparent hover:border-outline-variant transition-all">
+<div class="flex items-center gap-sm"><span class="text-outline w-4">10</span><span class="text-on-surface">Montair LC</span></div>
+<span class="text-on-surface-variant">₹9,800</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
